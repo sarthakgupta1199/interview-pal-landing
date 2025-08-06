@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-bg.jpg";
+import heroImage from "@/assets/interview-hero.png";
 const Hero = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="Hero background" className="w-full h-full object-cover opacity-10" />
-        <div className="absolute inset-0 bg-gradient-subtle" />
+        <img src={heroImage} alt="Interview scene" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/70" />
       </div>
       
       {/* Content */}
