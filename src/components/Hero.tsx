@@ -23,10 +23,10 @@ const Hero = () => {
           </div>
           
           {/* Main headline */}
-          <h1 className="mb-6 bg-gradient-hero bg-clip-text text-transparent">
+          <h1 className="mb-6 bg-gradient-hero bg-clip-text text-transparent leading-tight">
             Practice interviews
             <br />
-            with your AI coach
+            with your personal AI coach
           </h1>
           
           {/* Subheadline */}
