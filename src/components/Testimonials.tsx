@@ -1,60 +1,29 @@
 import { Card, CardContent } from "@/components/ui/card";
-
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Sarah Chen",
-      role: "Software Engineer at Google",
-      content: "Interview Pal helped me go from stumbling through technical questions to confidently explaining my thought process. The AI feedback was spot-on.",
-      rating: 5
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "Product Manager at Meta", 
-      content: "The voice practice was a game-changer. I could practice anywhere, anytime. Landed my PM role after just a week of daily sessions.",
-      rating: 5
-    },
-    {
-      name: "Emily Johnson",
-      role: "Marketing Director at Spotify",
-      content: "Finally, an interview prep tool that doesn't feel robotic. The conversations felt natural, and the feedback was actually helpful.",
-      rating: 5
-    }
-  ];
-
-  return (
-    <section className="py-24 bg-gradient-subtle">
+  const testimonials = [{
+    name: "Sarah Chen",
+    role: "Software Engineer at Google",
+    content: "Interview Pal helped me go from stumbling through technical questions to confidently explaining my thought process. The AI feedback was spot-on.",
+    rating: 5
+  }, {
+    name: "Marcus Rodriguez",
+    role: "Product Manager at Meta",
+    content: "The voice practice was a game-changer. I could practice anywhere, anytime. Landed my PM role after just a week of daily sessions.",
+    rating: 5
+  }, {
+    name: "Emily Johnson",
+    role: "Marketing Director at Spotify",
+    content: "Finally, an interview prep tool that doesn't feel robotic. The conversations felt natural, and the feedback was actually helpful.",
+    rating: 5
+  }];
+  return <section className="py-24 bg-gradient-subtle">
       <div className="container mx-auto px-4">
 
         {/* Testimonials grid */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-0 shadow-soft-md hover:shadow-soft-lg transition-all duration-300 bg-gradient-card">
-              <CardContent className="p-8">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-lg">⭐</span>
-                  ))}
-                </div>
-                
-                {/* Quote */}
-                <blockquote className="text-foreground mb-6 leading-relaxed">
-                  "{testimonial.content}"
-                </blockquote>
-                
-                {/* Author */}
-                <div className="border-t border-border pt-4">
-                  <div className="font-semibold text-foreground">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+          {testimonials.map((testimonial, index) => <Card key={index} className="border-0 shadow-soft-md hover:shadow-soft-lg transition-all duration-300 bg-gradient-card">
+              
+            </Card>)}
         </div>
 
         {/* Trust indicators */}
@@ -71,8 +40,6 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Testimonials;

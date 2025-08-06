@@ -1,16 +1,10 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bg.jpg";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Hero background" 
-          className="w-full h-full object-cover opacity-10"
-        />
+        <img src={heroImage} alt="Hero background" className="w-full h-full object-cover opacity-10" />
         <div className="absolute inset-0 bg-gradient-subtle" />
       </div>
       
@@ -30,10 +24,7 @@ const Hero = () => {
           </h1>
           
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Get personalized feedback, build confidence, and land your dream job. 
-            No more interview anxiety.
-          </p>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">Get actionable feedback, build confidence, and land your dream job. No more interview anxiety.</p>
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -63,8 +54,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
