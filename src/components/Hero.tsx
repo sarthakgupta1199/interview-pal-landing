@@ -12,9 +12,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-soft text-primary text-sm font-medium mb-8">
-            🎯 Your interview confidence starts here
-          </div>
+          
           
           {/* Main headline */}
           <h1 className="mb-6 bg-gradient-hero bg-clip-text text-transparent leading-tight">
