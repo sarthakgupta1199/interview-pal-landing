@@ -5,6 +5,7 @@ import Screenshots from "@/components/Screenshots";
 import HowItWorks from "@/components/HowItWorks";
 import VideoReviews from "@/components/VideoReviews";
 import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ const Index = () => {
       <HowItWorks />
       <VideoReviews />
       <Testimonials />
+      <Pricing />
       <CTA />
       <Footer />
     </main>

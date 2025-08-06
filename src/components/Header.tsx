@@ -58,6 +58,12 @@ const Header = () => {
             >
               Reviews
             </button>
+            <button 
+              onClick={() => scrollToSection("pricing")}
+              className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+            >
+              Pricing
+            </button>
           </nav>
 
           {/* Desktop CTA */}
@@ -97,6 +103,12 @@ const Header = () => {
                 className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors font-medium"
               >
                 Reviews
+              </button>
+              <button 
+                onClick={() => scrollToSection("pricing")}
+                className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors font-medium"
+              >
+                Pricing
               </button>
               <div className="px-4 pt-2">
                 <Button size="sm" className="w-full font-medium">
