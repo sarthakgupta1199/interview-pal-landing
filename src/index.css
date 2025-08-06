@@ -164,4 +164,12 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Hide scrollbar for video reviews */
+  .scrollbar-hide {
+    -webkit-overflow-scrolling: touch;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
