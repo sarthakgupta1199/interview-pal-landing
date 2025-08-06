@@ -25,15 +25,6 @@ const Testimonials = () => {
   return (
     <section className="py-24 bg-gradient-subtle">
       <div className="container mx-auto px-4">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <h2 className="mb-4">
-            Real people, real results
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what people are saying about their Interview Pal experience.
-          </p>
-        </div>
 
         {/* Testimonials grid */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
