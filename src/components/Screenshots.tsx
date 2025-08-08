@@ -1,6 +1,9 @@
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+
 const Screenshots = () => {
+  const navigate = useNavigate();
   return <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
@@ -101,7 +104,11 @@ const Screenshots = () => {
 
         {/* CTA below bento grid */}
         <div className="text-center mt-12">
-          <Button size="lg" className="text-lg px-8 py-4">
+          <Button 
+            size="lg" 
+            className="text-lg px-8 py-4"
+            onClick={() => navigate('/interview')}
+          >
             Start your first practice session
           </Button>
         </div>

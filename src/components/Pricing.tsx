@@ -2,8 +2,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Pricing = () => {
+  const navigate = useNavigate();
   const plans = [
     {
       name: "Free Trial",
@@ -116,6 +118,7 @@ const Pricing = () => {
                       : 'variant-outline'
                   }`}
                   variant={plan.popular ? 'default' : 'outline'}
+                  onClick={() => navigate('/interview')}
                 >
                   {plan.cta}
                 </Button>

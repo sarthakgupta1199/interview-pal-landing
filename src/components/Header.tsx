@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +70,11 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Button size="sm" className="font-medium">
+            <Button 
+              size="sm" 
+              className="font-medium"
+              onClick={() => navigate('/interview')}
+            >
               Try Now
             </Button>
           </div>
@@ -111,7 +117,11 @@ const Header = () => {
                 Pricing
               </button>
               <div className="px-4 pt-2">
-                <Button size="sm" className="w-full font-medium">
+                <Button 
+                  size="sm" 
+                  className="w-full font-medium"
+                  onClick={() => navigate('/interview')}
+                >
                   Try Now
                 </Button>
               </div>

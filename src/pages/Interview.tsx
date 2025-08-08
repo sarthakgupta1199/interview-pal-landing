@@ -98,7 +98,7 @@ const Interview = () => {
 
   const handleSetupSubmit = () => {
     setShowModal(false);
-    setState('idle');
+    startInterview();
   };
 
   const handleSetupSkip = () => {
@@ -304,8 +304,9 @@ const Interview = () => {
               </Select>
             </div>
             <div className="flex gap-2">
-              <Button onClick={handleSetupSubmit} className="flex-1">Continue</Button>
-              <Button variant="outline" onClick={handleSetupSkip} className="flex-1">Skip for now</Button>
+              <Button onClick={handleSetupSubmit} className="w-full text-lg py-6" size="lg">
+                Submit & start
+              </Button>
             </div>
           </div>
         </DialogContent>
