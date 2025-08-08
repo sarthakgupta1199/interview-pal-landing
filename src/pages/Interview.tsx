@@ -202,15 +202,7 @@ const Interview = () => {
   };
 
   const handleSubmitInterview = () => {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 }
-    });
-    
-    setTimeout(() => {
-      navigate('/');
-    }, 3000);
+    navigate('/report');
   };
 
   const requestMicPermission = async () => {
