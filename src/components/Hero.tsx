@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-bg.jpg";
 const Hero = () => {
+  const navigate = useNavigate();
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
@@ -26,10 +28,19 @@ const Hero = () => {
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105">
+            <Button 
+              size="lg" 
+              className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105"
+              onClick={() => navigate('/interview')}
+            >
               Start practicing free
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg px-8 py-4"
+              onClick={() => navigate('/interview')}
+            >
               Watch demo
             </Button>
           </div>
