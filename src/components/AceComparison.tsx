@@ -21,7 +21,7 @@ const AceComparison = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="mb-2 font-manrope">&quot;But I can do this on ChatGPT&quot;</h2>
-          <p className="text-muted-foreground">No, you can&apos;t.</p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">No, you can&apos;t.</p>
         </div>
 
         <div className="max-w-5xl mx-auto">
