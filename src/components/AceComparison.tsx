@@ -21,7 +21,7 @@ const AceComparison = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="mb-6 font-manrope">&quot;But I can do this on ChatGPT&quot;</h2>
-          <p className="text-xl text-muted-foreground font-medium">No, you can't.</p>
+          
         </div>
 
         <div className="max-w-5xl mx-auto">
@@ -64,9 +64,7 @@ const AceComparison = () => {
 
           {/* CTA */}
           <div className="text-center">
-            <Button size="lg" className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105" onClick={() => navigate('/interview')}>
-              Start practicing free
-            </Button>
+            <Button size="lg" className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105" onClick={() => navigate('/interview')}>Train me now</Button>
           </div>
         </div>
       </div>
