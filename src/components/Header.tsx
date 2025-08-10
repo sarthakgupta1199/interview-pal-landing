@@ -35,9 +35,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 rounded-lg bg-gradient-hero flex items-center justify-center">
-              <span className="text-white font-bold text-sm">IP</span>
+              <span className="text-white font-bold text-sm">AI</span>
             </div>
-            <span className="font-bold text-xl text-foreground">Interview Pal</span>
+            <span className="font-bold text-xl text-foreground">Ace Interviewer</span>
           </div>
 
           {/* Desktop Navigation */}

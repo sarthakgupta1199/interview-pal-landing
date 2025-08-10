@@ -7,7 +7,7 @@ const Screenshots = () => {
   return <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="mb-4">See Interview Pal in action</h2>
+          <h2 className="mb-4">See Ace Interviewer in action</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Mock interviews that feel real and instant reports that make you better</p>
         </div>
 

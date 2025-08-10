@@ -18,7 +18,7 @@ const reviews: Review[] = [{
   rating: 5,
   thumbnail: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
   duration: "2:45",
-  quote: "Interview Pal helped me land my dream job at Google. The AI feedback was incredibly accurate."
+  quote: "Ace Interviewer helped me land my dream job at Google. The AI feedback was incredibly accurate."
 }, {
   id: "2",
   name: "Marcus Rodriguez",
@@ -36,7 +36,7 @@ const reviews: Review[] = [{
   rating: 5,
   thumbnail: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
   duration: "2:28",
-  quote: "I was so nervous about interviews. Interview Pal gave me the confidence I needed."
+  quote: "I was so nervous about interviews. Ace Interviewer gave me the confidence I needed."
 }, {
   id: "4",
   name: "David Kim",
@@ -54,7 +54,7 @@ const reviews: Review[] = [{
   rating: 5,
   thumbnail: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=face",
   duration: "3:33",
-  quote: "Interview Pal's feedback helped me improve my storytelling and presentation skills."
+  quote: "Ace Interviewer's feedback helped me improve my storytelling and presentation skills."
 }, {
   id: "6",
   name: "Alex Johnson",

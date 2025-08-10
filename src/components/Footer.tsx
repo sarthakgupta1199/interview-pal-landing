@@ -6,7 +6,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="font-bold text-2xl text-primary mb-4">
-              Interview Pal
+              Ace Interviewer
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Your AI-powered interview coach. 
@@ -52,7 +52,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2024 Interview Pal. All rights reserved.
+            © 2024 Ace Interviewer. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-primary transition-colors">Privacy</a>

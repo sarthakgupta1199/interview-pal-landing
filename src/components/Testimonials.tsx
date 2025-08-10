@@ -3,7 +3,7 @@ const Testimonials = () => {
   const testimonials = [{
     name: "Sarah Chen",
     role: "Software Engineer at Google",
-    content: "Interview Pal helped me go from stumbling through technical questions to confidently explaining my thought process. The AI feedback was spot-on.",
+    content: "Ace Interviewer helped me go from stumbling through technical questions to confidently explaining my thought process. The AI feedback was spot-on.",
     rating: 5
   }, {
     name: "Marcus Rodriguez",

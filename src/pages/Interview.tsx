@@ -330,7 +330,7 @@ const Interview = () => {
         <Button variant="ghost" size="icon" onClick={() => navigate('/')}>
           <ArrowLeft className="h-5 w-5" />
         </Button>
-        <h1 className="text-lg font-semibold">Interview Pal</h1>
+        <h1 className="text-lg font-semibold">Ace Interviewer</h1>
         <div className={`text-lg font-mono ${timeLeft <= 120 ? 'text-destructive' : 'text-foreground'}`}>
           {formatTime(timeLeft)}
         </div>

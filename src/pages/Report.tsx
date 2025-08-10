@@ -1,113 +1,123 @@
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Download, Menu, Star, TrendingUp, TrendingDown, Lightbulb } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { ArrowLeft, Star, Download, Calendar, Building, User, Briefcase, ChevronDown, Target } from "lucide-react";
 import confetti from 'canvas-confetti';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const Report = () => {
   const navigate = useNavigate();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Trigger confetti on page load
   useEffect(() => {
-    const timer = setTimeout(() => {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
-      setIsLoaded(true);
-    }, 100);
-
-    return () => clearTimeout(timer);
+    // Trigger confetti animation
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+    
+    setTimeout(() => setIsLoaded(true), 300);
   }, []);
 
-  // Mock data
-  const overallScore = 82;
-  const subMetrics = [
-    { name: 'Clarity of Thought', score: 4 },
-    { name: 'Structure', score: 4 },
-    { name: 'Product Thinking', score: 5 },
-    { name: 'Metrics', score: 3 },
-    { name: 'Creativity', score: 4 },
-    { name: 'Collaboration', score: 4 },
-    { name: 'Technical Depth', score: 3 },
-    { name: 'Self-Awareness', score: 5 },
-  ];
-
-  const positives = [
-    {
-      title: "Strong Product Intuition",
-      description: "Demonstrated excellent understanding of user needs and market dynamics.",
-      quote: "I'd focus on reducing user friction in the onboarding flow to improve retention..."
+  // Mock data for the report
+  const reportData = {
+    candidate: {
+      name: "Alex Johnson",
+      email: "alex@example.com",
+      targetRole: "Product Manager",
+      company: "TechCorp",
+      interviewType: "Behavioral + Case Study",
+      date: "January 15, 2025"
     },
-    {
-      title: "Clear Communication",
-      description: "Articulated complex ideas in a structured, easy-to-follow manner.",
-      quote: "Let me break this down into three key areas: user impact, technical feasibility, and business value..."
+    overallScore: 78,
+    topWins: [
+      { text: "Excellent STAR framework usage", quote: "When I led the product redesign...", timestamp: "3:42" },
+      { text: "Strong stakeholder management example", quote: "I coordinated with 5 different teams...", timestamp: "8:15" },
+      { text: "Clear metrics-driven thinking", quote: "We increased conversion by 23%...", timestamp: "12:30" }
+    ],
+    areasToImprove: [
+      { text: "More specific numbers needed", quote: "We improved the process significantly", timestamp: "5:20" },
+      { text: "Clearer problem definition", quote: "There were some challenges...", timestamp: "9:45" },
+      { text: "Better closing statements", quote: "That's basically what happened", timestamp: "14:10" }
+    ],
+    nextMockGoals: [
+      "Practice technical PM questions",
+      "Improve data storytelling",
+      "Work on executive presence"
+    ],
+    skillScores: {
+      structureClarity: { score: 4, feedback: "Excellent use of frameworks. Minor improvements in logical flow." },
+      analyticalThinking: { score: 3, feedback: "Good problem breakdown. Work on deeper insights and hypothesis generation." },
+      communication: { score: 4, feedback: "Clear and confident delivery. Watch filler words and pace." },
+      evidenceMetrics: { score: 3, feedback: "Some good examples but need more specific numbers and outcomes." },
+      handlingPushback: { score: 2, feedback: "Struggled with follow-up questions. Practice defending assumptions." }
     },
-    {
-      title: "Data-Driven Approach",
-      description: "Consistently referenced metrics and quantifiable outcomes.",
-      quote: "Based on the 15% conversion rate, I'd estimate this feature could drive $2M in additional revenue..."
-    }
-  ];
-
-  const negatives = [
-    {
-      title: "Limited Technical Detail",
-      description: "Could have provided more depth on implementation challenges.",
-      quote: "We'd need to work with engineering on this..."
+    improvements: [
+      {
+        title: "Quantify Your Impact",
+        transcript: "We improved the user experience and got good feedback from customers.",
+        betterAnswer: "We improved the user experience by reducing checkout time from 3.2 to 1.8 minutes, resulting in a 23% increase in conversion rate and $2.3M additional quarterly revenue based on feedback from 1,200+ customers."
+      },
+      {
+        title: "Structure Complex Answers",
+        transcript: "There were multiple issues with the project timeline and budget constraints plus team coordination problems.",
+        betterAnswer: "Let me break this down into three key challenges: First, timeline - we had a 2-week delay due to API changes. Second, budget - we were 15% over due to additional security requirements. Third, coordination - with 4 cross-functional teams, we needed better communication protocols."
+      }
+    ],
+    voiceVideoInsights: {
+      voice: {
+        wordsPerMinute: 145,
+        fillerWords: 23,
+        pauseAnalysis: "Good use of strategic pauses",
+        toneEnergy: 7.2
+      },
+      video: {
+        eyeContactPercent: 78,
+        postureScore: 8.5,
+        gestureUsage: "Moderate and appropriate",
+        facialExpressiveness: 6.8
+      }
     },
-    {
-      title: "Missing Edge Cases",
-      description: "Didn't consider potential failure scenarios or alternative user paths.",
-      quote: "The main user flow would be straightforward..."
-    }
-  ];
-
-  const recommendations = [
-    {
-      title: "Strengthen Technical Fluency",
-      description: "Study common system design patterns and backend concepts.",
-      example: "Instead of 'work with engineering,' say 'This would require API rate limiting and caching strategies to handle scale.'"
-    },
-    {
-      title: "Practice Framework Thinking",
-      description: "Use structured frameworks like STAR or the PM framework for answers.",
-      example: "Always start with 'Let me clarify the problem first' then structure your response in clear sections."
-    },
-    {
-      title: "Quantify More Often",
-      description: "Support statements with specific numbers and assumptions.",
-      example: "Instead of 'many users,' say 'approximately 40% of our DAU based on similar feature adoption rates.'"
-    }
-  ];
-
-  const voiceFeedback = {
-    tone: "Confident and warm delivery. Good energy level that kept the conversation engaging.",
-    pauses: "Natural pacing with minimal fillers. Effective use of strategic pauses for emphasis.",
-    overall: "Clear articulation and professional tone. Voice conveyed enthusiasm for the product space."
+    actionPlan: [
+      {
+        title: "Numbers & Metrics Drill",
+        description: "Practice adding specific numbers to every achievement story",
+        outcome: "Improve evidence-based communication by 40%"
+      },
+      {
+        title: "Pushback Response Framework",
+        description: "Use: Acknowledge → Clarify → Respond with data → Check understanding",
+        outcome: "Handle challenging questions with confidence"
+      },
+      {
+        title: "Executive Presence Practice",
+        description: "Record 5-minute self-intro focusing on eye contact and gesture control",
+        outcome: "Boost leadership communication style"
+      }
+    ]
   };
 
   const previousReports = [
-    { date: '2024-01-15', type: 'Product Manager', score: 85 },
-    { date: '2024-01-10', type: 'Consulting', score: 78 },
-    { date: '2024-01-05', type: 'MBA Interview', score: 82 },
+    { id: 1, role: "Product Manager", company: "TechCorp", date: "Jan 15", score: 78 },
+    { id: 2, role: "Product Manager", company: "StartupXYZ", date: "Jan 10", score: 72 },
+    { id: 3, role: "Sr PM", company: "BigTech", date: "Jan 5", score: 85 },
+    { id: 4, role: "Product Lead", company: "ScaleUp", date: "Dec 28", score: 69 }
   ];
 
-  const downloadPDF = () => {
-    // Stub function for PDF download
-    console.log('Downloading PDF report...');
+  const getScoreColor = (score: number) => {
+    if (score >= 80) return "text-green-600";
+    if (score >= 70) return "text-yellow-600";
+    return "text-red-600";
   };
 
-  const getScoreColor = (score: number) => {
-    if (score >= 80) return 'text-green-600';
-    if (score >= 60) return 'text-yellow-600';
-    return 'text-red-600';
+  const getScoreBgColor = (score: number) => {
+    if (score >= 80) return "bg-green-50 border-green-200";
+    if (score >= 70) return "bg-yellow-50 border-yellow-200";
+    return "bg-red-50 border-red-200";
   };
 
   const renderStars = (score: number) => {
@@ -115,42 +125,56 @@ const Report = () => {
       <Star
         key={i}
         className={`w-4 h-4 ${
-          i < score ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'
+          i < score ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-200 text-gray-200'
         }`}
       />
     ));
   };
 
-  const PreviousReportsContent = () => (
-    <div className="space-y-4">
-      <h3 className="font-semibold text-lg mb-4">Previous Reports</h3>
-      {previousReports.map((report, index) => (
-        <Card key={index} className="cursor-pointer hover:bg-accent transition-colors">
-          <CardContent className="p-4">
-            <div className="flex justify-between items-center">
-              <div>
-                <p className="font-medium">{report.type}</p>
-                <p className="text-sm text-muted-foreground">{report.date}</p>
-              </div>
-              <Badge className={getScoreColor(report.score)}>
-                {report.score}/100
-              </Badge>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
+  const downloadPDF = () => {
+    // PDF download functionality would go here
+    console.log("Downloading PDF report...");
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-green-50/20 to-blue-50/30">
-      {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-40">
-        <div className="container mx-auto px-4 py-4">
+    <div className="min-h-screen bg-background flex">
+      {/* Left Sidebar - Previous Reports */}
+      <div className="w-80 border-r border-border bg-muted/30 hidden lg:block">
+        <div className="p-6">
+          <h3 className="font-semibold text-lg mb-4">Previous Reports</h3>
+          <ScrollArea className="h-[calc(100vh-120px)]">
+            <div className="space-y-3">
+              {previousReports.map((report) => (
+                <Card key={report.id} className="cursor-pointer hover:shadow-md transition-shadow">
+                  <CardContent className="p-4">
+                    <div className="flex justify-between items-start mb-2">
+                      <div className="flex-1">
+                        <p className="font-medium text-sm">{report.role}</p>
+                        <p className="text-xs text-muted-foreground">{report.company}</p>
+                      </div>
+                      <div className={`text-right ${getScoreColor(report.score)}`}>
+                        <p className="font-bold text-lg">{report.score}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-3 h-3 text-muted-foreground" />
+                      <span className="text-xs text-muted-foreground">{report.date}</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 relative">
+        {/* Header */}
+        <div className="sticky top-0 z-10 bg-background border-b border-border p-4">
           <div className="flex items-center justify-between">
             <Button
               variant="ghost"
-              size="sm"
               onClick={() => navigate('/')}
               className="flex items-center gap-2"
             >
@@ -158,167 +182,273 @@ const Report = () => {
               <span className="hidden sm:inline">Back to Home</span>
             </Button>
             
-            <h1 className="text-lg font-semibold">Interview Pal</h1>
+            <h1 className="text-lg font-semibold">Ace Interviewer</h1>
             
-            {/* Mobile menu for previous reports */}
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="md:hidden">
-                  <Menu className="w-4 h-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-80">
-                <PreviousReportsContent />
-              </SheetContent>
-            </Sheet>
+            <div className="w-[120px]" /> {/* Spacer for centering */}
           </div>
         </div>
-      </header>
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex gap-8">
-          {/* Previous Reports Sidebar - Desktop */}
-          <aside className="hidden md:block w-80 space-y-4">
-            <PreviousReportsContent />
-          </aside>
-
-          {/* Main Content */}
-          <main className="flex-1 space-y-8">
-            {/* Header Section */}
-            <div className={`text-center space-y-4 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary via-green-600 to-blue-600 bg-clip-text text-transparent">
-                Your Interview Report
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Well done, here's how you did.
-              </p>
-            </div>
-
-            {/* Score Card */}
-            <Card className={`transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <ScrollArea className="h-[calc(100vh-80px)]">
+          <div className="p-6 max-w-5xl mx-auto space-y-8">
+            {/* Report Header */}
+            <Card className={`transition-all duration-700 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <CardHeader>
-                <CardTitle className="text-center">Overall Performance</CardTitle>
+                <CardTitle className="flex items-center gap-2">
+                  <User className="w-5 h-5" />
+                  Interview Report
+                </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="text-center">
-                  <div className={`text-6xl font-bold ${getScoreColor(overallScore)}`}>
-                    {overallScore}
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                  <div className="flex items-center gap-2">
+                    <User className="w-4 h-4 text-muted-foreground" />
+                    <div>
+                      <p className="text-muted-foreground">Candidate</p>
+                      <p className="font-medium">{reportData.candidate.name}</p>
+                    </div>
                   </div>
-                  <div className="text-lg text-muted-foreground">out of 100</div>
+                  <div className="flex items-center gap-2">
+                    <Briefcase className="w-4 h-4 text-muted-foreground" />
+                    <div>
+                      <p className="text-muted-foreground">Target Role</p>
+                      <p className="font-medium">{reportData.candidate.targetRole}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Building className="w-4 h-4 text-muted-foreground" />
+                    <div>
+                      <p className="text-muted-foreground">Company</p>
+                      <p className="font-medium">{reportData.candidate.company}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-muted-foreground" />
+                    <div>
+                      <p className="text-muted-foreground">Date</p>
+                      <p className="font-medium">{reportData.candidate.date}</p>
+                    </div>
+                  </div>
+                  <div className="col-span-2">
+                    <p className="text-muted-foreground">Interview Type</p>
+                    <p className="font-medium">{reportData.candidate.interviewType}</p>
+                  </div>
                 </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {subMetrics.map((metric, index) => (
-                    <div key={metric.name} className="flex justify-between items-center p-3 bg-accent/50 rounded-lg">
-                      <span className="text-sm font-medium">{metric.name}</span>
-                      <div className="flex gap-1">
-                        {renderStars(metric.score)}
+              </CardContent>
+            </Card>
+
+            {/* Summary at a Glance */}
+            <Card className={`transition-all duration-700 delay-100 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <CardHeader>
+                <CardTitle>Summary at a Glance</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {/* Overall Score */}
+                  <div className="text-center">
+                    <div className={`w-32 h-32 mx-auto rounded-full border-4 flex items-center justify-center ${getScoreBgColor(reportData.overallScore)}`}>
+                      <div className="text-center">
+                        <div className={`text-4xl font-bold ${getScoreColor(reportData.overallScore)}`}>
+                          {reportData.overallScore}
+                        </div>
+                        <div className="text-sm text-muted-foreground">Overall</div>
                       </div>
+                    </div>
+                  </div>
+
+                  {/* Top 3 Wins */}
+                  <div>
+                    <h4 className="font-semibold text-green-600 mb-3">🎉 Top 3 Wins</h4>
+                    <div className="space-y-3">
+                      {reportData.topWins.map((win, index) => (
+                        <div key={index} className="p-3 bg-green-50 border border-green-200 rounded-lg">
+                          <p className="font-medium text-sm text-green-800">{win.text}</p>
+                          <p className="text-xs text-green-600 italic">"{win.quote}"</p>
+                          <p className="text-xs text-green-500">{win.timestamp}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Areas to Improve */}
+                  <div>
+                    <h4 className="font-semibold text-amber-600 mb-3">📈 Areas to Improve</h4>
+                    <div className="space-y-3">
+                      {reportData.areasToImprove.map((area, index) => (
+                        <div key={index} className="p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                          <p className="font-medium text-sm text-amber-800">{area.text}</p>
+                          <p className="text-xs text-amber-600 italic">"{area.quote}"</p>
+                          <p className="text-xs text-amber-500">{area.timestamp}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Next Mock Goals */}
+                <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <h4 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
+                    <Target className="w-4 h-4" />
+                    Next Mock Goals
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+                    {reportData.nextMockGoals.map((goal, index) => (
+                      <Badge key={index} variant="secondary" className="bg-blue-100 text-blue-800 justify-center py-2">
+                        {goal}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Core Skill Heatmap */}
+            <Card className={`transition-all duration-700 delay-200 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <CardHeader>
+                <CardTitle>Core Skill Assessment</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {Object.entries(reportData.skillScores).map(([skill, data]) => (
+                    <div key={skill} className="p-4 border border-border rounded-lg">
+                      <h4 className="font-medium mb-2 capitalize">
+                        {skill.replace(/([A-Z])/g, ' $1').trim()}
+                      </h4>
+                      <div className="flex items-center gap-2 mb-2">
+                        {renderStars(data.score)}
+                        <span className="text-sm text-muted-foreground">({data.score}/5)</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground">{data.feedback}</p>
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            {/* Positives Section */}
-            <Card className={`transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {/* Areas of Improvement with Rewrites */}
+            <Card className={`transition-all duration-700 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-green-700">
-                  <TrendingUp className="w-5 h-5" />
-                  Strengths
-                </CardTitle>
+                <CardTitle>Improvement Examples</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {positives.map((positive, index) => (
-                  <div key={index} className="border-l-4 border-green-500 pl-4 space-y-2">
-                    <h4 className="font-semibold text-green-800">{positive.title}</h4>
-                    <p className="text-sm text-muted-foreground">{positive.description}</p>
-                    <blockquote className="text-sm italic bg-green-50 p-3 rounded-md border-l-2 border-green-200">
-                      "{positive.quote}"
-                    </blockquote>
-                  </div>
+                {reportData.improvements.map((improvement, index) => (
+                  <Collapsible key={index}>
+                    <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
+                      <span className="font-medium text-left">{improvement.title}</span>
+                      <ChevronDown className="w-4 h-4" />
+                    </CollapsibleTrigger>
+                    <CollapsibleContent className="pt-4">
+                      <div className="space-y-4">
+                        <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+                          <p className="text-sm font-medium text-red-800 mb-1">Your Answer:</p>
+                          <p className="text-sm text-red-700 italic">"{improvement.transcript}"</p>
+                        </div>
+                        <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
+                          <p className="text-sm font-medium text-green-800 mb-1">Better Answer:</p>
+                          <p className="text-sm text-green-700">"{improvement.betterAnswer}"</p>
+                        </div>
+                      </div>
+                    </CollapsibleContent>
+                  </Collapsible>
                 ))}
               </CardContent>
             </Card>
 
-            {/* Negatives Section */}
-            <Card className={`transition-all duration-700 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {/* Voice & Video Insights */}
+            <Card className={`transition-all duration-700 delay-400 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-red-700">
-                  <TrendingDown className="w-5 h-5" />
-                  Areas to Improve
-                </CardTitle>
+                <CardTitle>Voice & Video Insights</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {negatives.map((negative, index) => (
-                  <div key={index} className="border-l-4 border-red-500 pl-4 space-y-2">
-                    <h4 className="font-semibold text-red-800">{negative.title}</h4>
-                    <p className="text-sm text-muted-foreground">{negative.description}</p>
-                    <blockquote className="text-sm italic bg-red-50 p-3 rounded-md border-l-2 border-red-200">
-                      "{negative.quote}"
-                    </blockquote>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            {/* Recommendations Section */}
-            <Card className={`transition-all duration-700 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-yellow-700">
-                  <Lightbulb className="w-5 h-5" />
-                  Actionable Recommendations
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {recommendations.map((rec, index) => (
-                  <div key={index} className="border-l-4 border-yellow-500 pl-4 space-y-2">
-                    <h4 className="font-semibold text-yellow-800">{rec.title}</h4>
-                    <p className="text-sm text-muted-foreground">{rec.description}</p>
-                    <div className="text-sm bg-yellow-50 p-3 rounded-md border-l-2 border-yellow-200">
-                      <strong>Example:</strong> {rec.example}
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Voice Metrics */}
+                  <div>
+                    <h4 className="font-semibold mb-4 text-purple-600">🎙️ Voice Analysis</h4>
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                        <span className="text-sm">Words per minute</span>
+                        <span className="font-medium">{reportData.voiceVideoInsights.voice.wordsPerMinute}</span>
+                      </div>
+                      <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                        <span className="text-sm">Filler words</span>
+                        <span className="font-medium">{reportData.voiceVideoInsights.voice.fillerWords}</span>
+                      </div>
+                      <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                        <span className="text-sm">Tone energy</span>
+                        <span className="font-medium">{reportData.voiceVideoInsights.voice.toneEnergy}/10</span>
+                      </div>
+                      <div className="p-3 bg-muted/50 rounded-lg">
+                        <span className="text-sm block mb-1">Pause analysis</span>
+                        <span className="text-xs text-muted-foreground">{reportData.voiceVideoInsights.voice.pauseAnalysis}</span>
+                      </div>
                     </div>
                   </div>
-                ))}
-              </CardContent>
-            </Card>
 
-            {/* Voice Feedback Section */}
-            <Card className={`transition-all duration-700 delay-600 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <CardHeader>
-                <CardTitle className="text-blue-700">Voice Feedback</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
+                  {/* Video Metrics */}
                   <div>
-                    <h4 className="font-semibold text-blue-800">Tone</h4>
-                    <p className="text-sm text-muted-foreground">{voiceFeedback.tone}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-blue-800">Pauses</h4>
-                    <p className="text-sm text-muted-foreground">{voiceFeedback.pauses}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-blue-800">Overall Voice Delivery</h4>
-                    <p className="text-sm text-muted-foreground">{voiceFeedback.overall}</p>
+                    <h4 className="font-semibold mb-4 text-blue-600">📹 Video Analysis</h4>
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                        <span className="text-sm">Eye contact</span>
+                        <span className="font-medium">{reportData.voiceVideoInsights.video.eyeContactPercent}%</span>
+                      </div>
+                      <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                        <span className="text-sm">Posture score</span>
+                        <span className="font-medium">{reportData.voiceVideoInsights.video.postureScore}/10</span>
+                      </div>
+                      <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
+                        <span className="text-sm">Facial expressiveness</span>
+                        <span className="font-medium">{reportData.voiceVideoInsights.video.facialExpressiveness}/10</span>
+                      </div>
+                      <div className="p-3 bg-muted/50 rounded-lg">
+                        <span className="text-sm block mb-1">Gesture usage</span>
+                        <span className="text-xs text-muted-foreground">{reportData.voiceVideoInsights.video.gestureUsage}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
-          </main>
-        </div>
-      </div>
 
-      {/* Sticky Download Button */}
-      <div className="fixed bottom-4 left-4 right-4 md:bottom-8 md:left-auto md:right-8 md:w-auto z-50">
-        <Button
-          onClick={downloadPDF}
-          size="lg"
-          className="w-full md:w-auto bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white shadow-lg"
-        >
-          <Download className="w-4 h-4 mr-2" />
-          Download PDF Report
-        </Button>
+            {/* 48-Hour Action Plan */}
+            <Card className={`transition-all duration-700 delay-500 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <CardHeader>
+                <CardTitle>48-Hour Action Plan</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {reportData.actionPlan.map((action, index) => (
+                    <div key={index} className="p-4 border border-border rounded-lg hover:shadow-md transition-shadow">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                          {index + 1}
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-1">{action.title}</h4>
+                          <p className="text-sm text-muted-foreground mb-2">{action.description}</p>
+                          <Badge variant="outline" className="text-xs">
+                            Expected: {action.outcome}
+                          </Badge>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </ScrollArea>
+
+        {/* Fixed Download Button */}
+        <div className="fixed bottom-6 right-6">
+          <Button
+            onClick={downloadPDF}
+            size="lg"
+            className="rounded-full shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Download PDF
+          </Button>
+        </div>
       </div>
     </div>
   );
