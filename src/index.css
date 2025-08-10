@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Interview Pal Design System - Clean, trustworthy, modern */
+/* Ace Interviewer Design System - Clean, modern, high-conversion */
 
 @layer base {
   :root {
@@ -16,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 20% 15%;
 
-    /* Primary brand - Professional blue */
-    --primary: 223 84% 58%;
+    /* Primary brand - Calm blue */
+    --primary: 214 84% 58%;
     --primary-foreground: 0 0% 100%;
-    --primary-soft: 223 100% 96%;
+    --primary-soft: 214 100% 96%;
 
     /* Secondary - Subtle grays */
     --secondary: 220 14% 96%;
@@ -29,10 +29,15 @@
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
 
-    /* Accent - Purple for highlights */
-    --accent: 269 79% 65%;
+    /* Accent - Warm orange for highlights */
+    --accent: 32 95% 62%;
     --accent-foreground: 0 0% 100%;
-    --accent-soft: 269 100% 97%;
+    --accent-soft: 32 100% 97%;
+    
+    /* Warning - Yellow for recommendations */
+    --warning: 48 96% 53%;
+    --warning-foreground: 32 5% 15%;
+    --warning-soft: 48 100% 96%;
 
     /* Trust indicators - Success green */
     --success: 142 71% 45%;
@@ -52,9 +57,10 @@
     --radius: 0.75rem;
 
     /* Custom gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(223 84% 58%) 0%, hsl(269 79% 65%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(214 84% 58%) 0%, hsl(32 95% 62%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 14% 99%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(32 95% 62%) 0%, hsl(48 96% 53%) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(223 84% 58% / 0.05);
