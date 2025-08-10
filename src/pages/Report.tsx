@@ -324,31 +324,26 @@ const Report = () => {
               </CardContent>
             </Card>
 
-            {/* Areas of Improvement with Rewrites */}
+            {/* Areas to Improve */}
             <Card className={`transition-all duration-700 delay-300 transform ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <CardHeader>
-                <CardTitle>Improvement Examples</CardTitle>
+                <CardTitle>Areas to Improve</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-6">
                 {reportData.improvements.map((improvement, index) => (
-                  <Collapsible key={index}>
-                    <CollapsibleTrigger className="flex items-center justify-between w-full p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                      <span className="font-medium text-left">{improvement.title}</span>
-                      <ChevronDown className="w-4 h-4" />
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="pt-4">
-                      <div className="space-y-4">
-                        <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
-                          <p className="text-sm font-medium text-red-800 mb-1">Your Answer:</p>
-                          <p className="text-sm text-red-700 italic">"{improvement.transcript}"</p>
-                        </div>
-                        <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
-                          <p className="text-sm font-medium text-green-800 mb-1">Better Answer:</p>
-                          <p className="text-sm text-green-700">"{improvement.betterAnswer}"</p>
-                        </div>
+                  <div key={index} className="space-y-4">
+                    <h4 className="font-semibold text-lg">{improvement.title}</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                        <p className="text-sm font-medium text-red-800 mb-2">Your Answer:</p>
+                        <p className="text-sm text-red-700 italic">"{improvement.transcript}"</p>
                       </div>
-                    </CollapsibleContent>
-                  </Collapsible>
+                      <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <p className="text-sm font-medium text-green-800 mb-2">Better Answer:</p>
+                        <p className="text-sm text-green-700">"{improvement.betterAnswer}"</p>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </CardContent>
             </Card>
