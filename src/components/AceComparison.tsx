@@ -2,33 +2,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Check, X } from "lucide-react";
-
 const AceComparison = () => {
   const navigate = useNavigate();
-
-  const comparisons = [
-    {
-      category: "Purpose",
-      ace: "Tuned only for interviews with smaller, focused data and expert prompts",
-      chatgpt: "Generalist that answers everything, shallow for interview depth"
-    },
-    {
-      category: "Coaching style",
-      ace: "Pushes back, asks hard follow-ups, corrects weak structure",
-      chatgpt: "Often affirms, rarely challenges, easy to get flattery"
-    },
-    {
-      category: "Outcomes",
-      ace: "Standardised evaluation report after every mock, cumulative progress view",
-      chatgpt: "No consistent rubric, no tracking"
-    }
-  ];
-
-  return (
-    <section className="py-24 px-4">
+  const comparisons = [{
+    category: "Purpose",
+    ace: "Tuned only for interviews with smaller, focused data and expert prompts",
+    chatgpt: "Generalist that answers everything, shallow for interview depth"
+  }, {
+    category: "Coaching style",
+    ace: "Pushes back, asks hard follow-ups, corrects weak structure",
+    chatgpt: "Often affirms, rarely challenges, easy to get flattery"
+  }, {
+    category: "Outcomes",
+    ace: "Standardised evaluation report after every mock, cumulative progress view",
+    chatgpt: "No consistent rubric, no tracking"
+  }];
+  return <section className="py-24 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="mb-6 font-manrope">But I can do this on ChatGPT</h2>
+          <h2 className="mb-6 font-manrope">&quot;But I can do this on ChatGPT&quot;</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             No you can't.
           </p>
@@ -51,8 +43,7 @@ const AceComparison = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {comparisons.map((comparison, index) => (
-                      <tr key={index} className="border-b">
+                    {comparisons.map((comparison, index) => <tr key={index} className="border-b">
                         <td className="py-6 px-4 font-medium">{comparison.category}</td>
                         <td className="py-6 px-4 text-center">
                           <div className="flex items-start gap-3">
@@ -66,8 +57,7 @@ const AceComparison = () => {
                             <span className="text-sm text-muted-foreground text-left">{comparison.chatgpt}</span>
                           </div>
                         </td>
-                      </tr>
-                    ))}
+                      </tr>)}
                   </tbody>
                 </table>
               </div>
@@ -76,18 +66,12 @@ const AceComparison = () => {
 
           {/* CTA */}
           <div className="text-center">
-            <Button 
-              size="lg"
-              className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105"
-              onClick={() => navigate('/interview')}
-            >
+            <Button size="lg" className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105" onClick={() => navigate('/interview')}>
               Start practicing free
             </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AceComparison;
