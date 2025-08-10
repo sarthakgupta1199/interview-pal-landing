@@ -41,7 +41,7 @@ const AceComparison = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {comparisons.map((comparison, index) => <tr key={index} className="border-b">
+                    {comparisons.map((comparison, index) => <tr key={index} className={index === comparisons.length - 1 ? "" : "border-b"}>
                         <td className="py-6 px-4 font-medium">{comparison.category}</td>
                         <td className="py-6 px-4 text-center">
                           <div className="flex items-start gap-3">
