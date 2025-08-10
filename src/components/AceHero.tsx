@@ -21,34 +21,7 @@ const AceHero = () => {
           <h1 className="mb-6 bg-gradient-hero bg-clip-text text-transparent leading-tight font-manrope">
             Practice interviews with your
             <br />
-            <span className="relative inline-block bg-gradient-hero bg-clip-text text-transparent">
-              personal AI coach
-              <svg
-                className="absolute -bottom-2 left-0 w-full h-4 pointer-events-none"
-                viewBox="0 0 300 16"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M5,10 Q20,4 40,8 T80,7 T120,9 T160,6 T200,8 T240,7 T280,9 Q290,8 295,10"
-                  stroke="#dc2626"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  opacity="0.8"
-                />
-                <path
-                  d="M240,11 Q250,8 270,10 T290,9 Q295,9 298,10"
-                  stroke="#dc2626"
-                  strokeWidth="2.5"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  opacity="0.7"
-                />
-              </svg>
-            </span>
+            personal AI coach
           </h1>
           
           {/* Subheadline */}
