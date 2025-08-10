@@ -19,7 +19,26 @@ const AceHero = () => {
           
           {/* Main headline */}
           <h1 className="mb-6 bg-gradient-hero bg-clip-text text-transparent leading-tight font-manrope">
-            Practice interviews with your personal AI coach
+            Practice interviews with your
+            <br />
+            <span className="relative inline-block">
+              personal AI coach
+              <svg
+                className="absolute -bottom-1 left-0 w-full h-3 text-red-500"
+                viewBox="0 0 200 12"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2,9 Q10,2 25,7 T50,6 T75,8 T100,5 T125,7 T150,6 T175,8 T198,6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </span>
           </h1>
           
           {/* Subheadline */}
