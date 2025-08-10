@@ -17,7 +17,7 @@ const AceSolution = () => {
       textColor: "text-foreground"
     },
     {
-      title: "Real-time Feedback",
+      title: "Available 24/7",
       description: "Get instant coaching on your answers, body language, and speaking pace",
       icon: Zap,
       screenshot: "/api/placeholder/400/300",
