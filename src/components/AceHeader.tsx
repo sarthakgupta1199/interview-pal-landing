@@ -63,7 +63,7 @@ const AceHeader = () => {
               onClick={() => navigate('/interview')}
               className="hover:scale-105 transition-transform"
             >
-              Start practicing free
+              Start practicing
             </Button>
           </div>
 
@@ -102,7 +102,7 @@ const AceHeader = () => {
                 onClick={() => navigate('/interview')}
                 className="w-full"
               >
-                Start practicing free
+                Start practicing
               </Button>
             </nav>
           </div>

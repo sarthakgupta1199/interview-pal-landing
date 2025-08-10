@@ -81,7 +81,7 @@ const AceFAQ = () => {
               className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105"
               onClick={() => navigate('/interview')}
             >
-              Start practicing free
+              Start practicing
             </Button>
           </div>
         </div>
