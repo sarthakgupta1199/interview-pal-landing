@@ -48,7 +48,7 @@ const AceFAQ = () => {
               <Accordion type="single" collapsible className="space-y-4">
                 {faqs.slice(0, 3).map((faq, index) => (
                   <AccordionItem key={index} value={`item-${index}`} className="bg-card rounded-lg border px-6">
-                    <AccordionTrigger className="text-left font-medium hover:no-underline py-6">
+                    <AccordionTrigger className="text-left text-base font-normal hover:no-underline py-6">
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground pb-6">
@@ -63,7 +63,7 @@ const AceFAQ = () => {
               <Accordion type="single" collapsible className="space-y-4">
                 {faqs.slice(3).map((faq, index) => (
                   <AccordionItem key={index + 3} value={`item-${index + 3}`} className="bg-card rounded-lg border px-6">
-                    <AccordionTrigger className="text-left font-medium hover:no-underline py-6">
+                    <AccordionTrigger className="text-left text-base font-normal hover:no-underline py-6">
                       {faq.question}
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground pb-6">

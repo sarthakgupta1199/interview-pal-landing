@@ -10,9 +10,9 @@ const AceSolution = () => {
     <section id="features" className="py-24 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="mb-6 font-manrope">Your toughest interviewer… and biggest supporter</h2>
+          <h2 className="mb-6 font-manrope">Meet your ultimate interview coach</h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            A well-trained AI interviewer with 20+ years of experience, available 24/7. Get detailed, actionable evaluation reports plus speech and video behaviour analysis powered by the latest AI models.
+            24/7 AI with actionable reports, speech and video analysis of your mock interview.
           </p>
         </div>
         

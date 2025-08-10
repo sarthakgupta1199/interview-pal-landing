@@ -28,9 +28,9 @@ const AceComparison = () => {
     <section className="py-24 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="mb-6 font-manrope">Why Ace Interviewer leaves generic AI in the dust</h2>
+          <h2 className="mb-6 font-manrope">But I can do this on ChatGPT</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Not all AI is created equal. Here's how we compare to ChatGPT for interview prep.
+            No you can't.
           </p>
         </div>
 
@@ -74,12 +74,8 @@ const AceComparison = () => {
             </CardContent>
           </Card>
 
-          {/* Note */}
+          {/* CTA */}
           <div className="text-center">
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Use both if you like — use Ace Interviewer when the goal is an offer.
-            </p>
-            
             <Button 
               size="lg"
               className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105"
