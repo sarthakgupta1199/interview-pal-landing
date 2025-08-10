@@ -2,19 +2,12 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Play } from "lucide-react";
 import heroImage from "@/assets/hero-bg.jpg";
-
 const AceHero = () => {
   const navigate = useNavigate();
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Hero background" 
-          className="w-full h-full object-cover opacity-5" 
-        />
+        <img src={heroImage} alt="Hero background" className="w-full h-full object-cover opacity-5" />
         <div className="absolute inset-0 bg-gradient-subtle" />
       </div>
       
@@ -22,9 +15,7 @@ const AceHero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center pt-16">
         <div className="max-w-5xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-primary-soft rounded-full text-primary text-sm font-medium mb-8">
-            ✨ Nail the interview before it counts
-          </div>
+          
           
           {/* Main headline */}
           <h1 className="mb-6 bg-gradient-hero bg-clip-text text-transparent leading-tight font-manrope">
@@ -33,24 +24,16 @@ const AceHero = () => {
           
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Get actionable feedback, build confidence, and land your dream job. No more interview anxiety.
+            Mock interviews that feel real, with <span className="text-primary font-semibold">personal AI coach</span> 
+            <br />instant evaluation reports to help you improve
           </p>
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
-              size="lg" 
-              className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105"
-              onClick={() => navigate('/interview')}
-            >
-              Start practicing
+            <Button size="lg" className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105" onClick={() => navigate('/interview')}>
+              Start practicing free
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-lg px-8 py-4 group"
-              onClick={() => navigate('/interview')}
-            >
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 group" onClick={() => navigate('/interview')}>
               <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               Watch demo
             </Button>
@@ -81,8 +64,6 @@ const AceHero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AceHero;
