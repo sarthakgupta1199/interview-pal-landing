@@ -8,7 +8,7 @@ const AceSolution = () => {
 
   const features = [
     {
-      title: "AI Interview Simulation",
+      title: "Experienced interview coach",
       description: "Practice with realistic questions and challenging follow-ups that adapt to your responses",
       icon: MessageSquare,
       screenshot: "/api/placeholder/400/300",
