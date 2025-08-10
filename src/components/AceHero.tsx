@@ -52,7 +52,7 @@ const AceHero = () => {
                   M
                 </div>
               </div>
-              <span className="text-sm font-medium">Loved by ambitious candidates across PM, consulting, and MBA tracks</span>
+              <span className="text-sm font-medium">Loved by candidates across PM, consulting, and MBA</span>
             </div>
             
             <div className="hidden lg:block w-1 h-1 rounded-full bg-muted-foreground" />
