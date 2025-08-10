@@ -59,7 +59,7 @@ const Pricing = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-foreground mb-4">
-            Simple, transparent pricing
+            Pricing
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Choose the plan that fits your interview preparation needs

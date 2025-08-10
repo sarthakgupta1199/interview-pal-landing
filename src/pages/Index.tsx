@@ -4,6 +4,7 @@ import AceProblem from "@/components/AceProblem";
 import AceSolution from "@/components/AceSolution";
 import AceTestimonials from "@/components/AceTestimonials";
 import AceComparison from "@/components/AceComparison";
+import Pricing from "@/components/Pricing";
 import AceFAQ from "@/components/AceFAQ";
 import AceFooter from "@/components/AceFooter";
 
@@ -16,6 +17,7 @@ const Index = () => {
       <AceSolution />
       <AceTestimonials />
       <AceComparison />
+      <Pricing />
       <AceFAQ />
       <AceFooter />
     </main>
