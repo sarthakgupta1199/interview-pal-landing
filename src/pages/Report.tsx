@@ -310,8 +310,8 @@ const Report = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {Object.entries(reportData.skillScores).map(([skill, data]) => (
                     <div key={skill} className="p-4 border border-border rounded-lg">
-                      <h4 className="font-medium mb-2 capitalize">
-                        {skill.replace(/([A-Z])/g, ' $1').trim()}
+                      <h4 className="font-medium mb-2">
+                        {skill.replace(/([A-Z])/g, ' $1').trim().toLowerCase().replace(/^\w/, c => c.toUpperCase())}
                       </h4>
                       <div className="flex items-center gap-2 mb-2">
                         {renderStars(data.score)}
