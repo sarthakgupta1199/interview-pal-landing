@@ -26,7 +26,7 @@ const AceSolution = () => {
       textColor: "text-foreground"
     },
     {
-      title: "Performance Analytics",
+      title: "Actionable report",
       description: "Detailed reports with actionable insights to improve your interview skills",
       icon: BarChart3,
       screenshot: "/api/placeholder/400/300",
