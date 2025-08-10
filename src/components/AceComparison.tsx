@@ -21,9 +21,7 @@ const AceComparison = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="mb-6 font-manrope">&quot;But I can do this on ChatGPT&quot;</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            No you can't.
-          </p>
+          
         </div>
 
         <div className="max-w-5xl mx-auto">
@@ -43,7 +41,7 @@ const AceComparison = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {comparisons.map((comparison, index) => <tr key={index} className={index === comparisons.length - 1 ? "" : "border-b"}>
+                    {comparisons.map((comparison, index) => <tr key={index} className="border-b">
                         <td className="py-6 px-4 font-medium">{comparison.category}</td>
                         <td className="py-6 px-4 text-center">
                           <div className="flex items-start gap-3">
@@ -67,7 +65,7 @@ const AceComparison = () => {
           {/* CTA */}
           <div className="text-center">
             <Button size="lg" className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105" onClick={() => navigate('/interview')}>
-              Start practicing
+              Start practicing free
             </Button>
           </div>
         </div>
