@@ -22,7 +22,7 @@ const AceFooter = () => {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="#features" className="hover:text-foreground transition-colors">Features</a></li>
               <li><a href="#testimonials" className="hover:text-foreground transition-colors">Reviews</a></li>
-              <li><a href="#faq" className="hover:text-foreground transition-colors">FAQ</a></li>
+              <li><a href="#faq" className="hover:text-foreground transition-colors">FAQs</a></li>
             </ul>
           </div>
 

@@ -50,10 +50,16 @@ const AceHeader = () => {
               Reviews
             </button>
             <button 
+              onClick={() => scrollToSection('pricing')}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Pricing
+            </button>
+            <button 
               onClick={() => scrollToSection('faq')}
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
-              FAQ
+              FAQs
             </button>
           </nav>
 
@@ -93,10 +99,16 @@ const AceHeader = () => {
                 Reviews
               </button>
               <button 
+                onClick={() => scrollToSection('pricing')}
+                className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Pricing
+              </button>
+              <button 
                 onClick={() => scrollToSection('faq')}
                 className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
               >
-                FAQ
+                FAQs
               </button>
               <Button 
                 onClick={() => navigate('/interview')}
