@@ -33,8 +33,7 @@ const AceHero = () => {
           
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Mock interviews that feel real, with <span className="text-primary font-semibold">personal AI coach</span> 
-            <br />instant evaluation reports to help you improve
+            Get actionable feedback, build confidence, and land your dream job. No more interview anxiety.
           </p>
           
           {/* CTA buttons */}
