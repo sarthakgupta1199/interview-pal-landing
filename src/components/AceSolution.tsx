@@ -1,10 +1,40 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
-import { Play, Target, Zap, FileText } from "lucide-react";
+import { Play, Target, Zap, FileText, MessageSquare, BarChart3 } from "lucide-react";
 
 const AceSolution = () => {
   const navigate = useNavigate();
+
+  const features = [
+    {
+      title: "AI Interview Simulation",
+      description: "Practice with realistic questions and challenging follow-ups that adapt to your responses",
+      icon: MessageSquare,
+      screenshot: "/api/placeholder/400/300",
+      bgColor: "bg-primary/5",
+      iconColor: "text-primary",
+      textColor: "text-foreground"
+    },
+    {
+      title: "Real-time Feedback",
+      description: "Get instant coaching on your answers, body language, and speaking pace",
+      icon: Zap,
+      screenshot: "/api/placeholder/400/300",
+      bgColor: "bg-accent/5",
+      iconColor: "text-accent",
+      textColor: "text-foreground"
+    },
+    {
+      title: "Performance Analytics",
+      description: "Detailed reports with actionable insights to improve your interview skills",
+      icon: BarChart3,
+      screenshot: "/api/placeholder/400/300",
+      bgColor: "bg-success/5",
+      iconColor: "text-success",
+      textColor: "text-foreground"
+    }
+  ];
 
   return (
     <section id="features" className="py-24 px-4">
@@ -16,68 +46,74 @@ const AceSolution = () => {
           </p>
         </div>
         
-        {/* Bento Grid */}
-        <div className="grid lg:grid-cols-12 lg:grid-rows-2 gap-6 mb-12">
-          {/* Large video tile */}
-          <Card className="lg:col-span-8 lg:row-span-2 bg-gradient-card hover:shadow-soft-xl transition-all duration-300 group">
-            <CardContent className="p-8 h-full flex flex-col justify-center items-center text-center">
-              <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Play className="h-12 w-12 text-primary" />
+        {/* Main Demo Section */}
+        <Card className="mb-16 overflow-hidden bg-gradient-card border-0 shadow-soft-xl">
+          <CardContent className="p-0">
+            <div className="grid lg:grid-cols-2 items-center">
+              <div className="p-12">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <Play className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="mb-4 font-manrope text-foreground">See Ace Interviewer in action</h3>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  Watch how our AI conducts realistic interviews with challenging follow-ups and provides real-time feedback to help you improve.
+                </p>
+                <Button 
+                  size="lg"
+                  className="shadow-soft-md hover:shadow-soft-lg transition-all duration-300"
+                  onClick={() => navigate('/interview')}
+                >
+                  <Play className="mr-2 h-5 w-5" />
+                  Watch Demo
+                </Button>
               </div>
-              <h3 className="mb-4 font-manrope">See Ace Interviewer in action</h3>
-              <p className="text-muted-foreground mb-6 max-w-md">
-                Watch how our AI conducts realistic interviews with challenging follow-ups and real-time feedback
-              </p>
-              <Button 
-                variant="outline"
-                className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
-                onClick={() => navigate('/interview')}
-              >
-                <Play className="mr-2 h-4 w-4" />
-                Play Demo
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Tough follow-ups */}
-          <Card className="lg:col-span-4 bg-success-soft hover:shadow-soft-lg transition-all duration-300 group">
-            <CardContent className="p-6">
-              <div className="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Target className="h-6 w-6 text-success" />
+              <div className="bg-muted/20 h-full min-h-[400px] flex items-center justify-center">
+                <div className="text-center p-8">
+                  <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Play className="h-12 w-12 text-primary" />
+                  </div>
+                  <p className="text-muted-foreground">Demo Video Placeholder</p>
+                  <p className="text-sm text-muted-foreground/70 mt-2">Click "Watch Demo" to see it in action</p>
+                </div>
               </div>
-              <h4 className="mb-3 font-manrope text-success-foreground">Tough follow-ups</h4>
-              <p className="text-success-foreground/80 text-sm">
-                Probes on metrics, users, trade-offs, and strategy
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Real-time coaching */}
-          <Card className="lg:col-span-4 bg-accent-soft hover:shadow-soft-lg transition-all duration-300 group">
-            <CardContent className="p-6">
-              <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Zap className="h-6 w-6 text-accent" />
-              </div>
-              <h4 className="mb-3 font-manrope text-accent-foreground">Real-time coaching</h4>
-              <p className="text-accent-foreground/80 text-sm">
-                Instant feedback after every answer so you improve before the next
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* One-click report card */}
-        <Card className="bg-warning-soft hover:shadow-soft-lg transition-all duration-300 group mb-12">
-          <CardContent className="p-8 text-center">
-            <div className="w-16 h-16 rounded-full bg-warning/20 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform">
-              <FileText className="h-8 w-8 text-warning" />
             </div>
-            <h3 className="mb-4 font-manrope text-warning-foreground">One-click report</h3>
-            <p className="text-warning-foreground/80 max-w-2xl mx-auto">
-              Clear score with quotes from your transcript, AI-driven speech and body-language insights, and step-by-step recommendations
-            </p>
           </CardContent>
         </Card>
+
+        {/* Feature Grid */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <Card key={index} className={`${feature.bgColor} border-0 hover:shadow-soft-lg transition-all duration-300 group overflow-hidden`}>
+                <CardContent className="p-0">
+                  {/* Screenshot placeholder */}
+                  <div className="bg-muted/30 h-48 flex items-center justify-center border-b border-border/20">
+                    <div className="text-center">
+                      <IconComponent className={`h-12 w-12 ${feature.iconColor} mb-2 mx-auto`} />
+                      <p className="text-sm text-muted-foreground">Screenshot placeholder</p>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className={`w-10 h-10 rounded-full ${feature.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                        <IconComponent className={`h-5 w-5 ${feature.iconColor}`} />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className={`font-manrope ${feature.textColor} mb-2`}>{feature.title}</h4>
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
 
         {/* CTA */}
         <div className="text-center">
