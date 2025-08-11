@@ -17,8 +17,8 @@ const WaitlistModal = ({ isOpen, onClose }: WaitlistModalProps) => {
   const [animationData, setAnimationData] = useState(null);
 
   useEffect(() => {
-    // Load Lottie animation
-    fetch("/src/assets/cat-animation.lottie")
+    // Load Lottie animation from lottie.host
+    fetch("https://lottie.host/bffdc5c3-835d-43f0-aafd-4bd67c4aeb97/UL292uGmz6.json")
       .then(response => response.json())
       .then(data => setAnimationData(data))
       .catch(error => console.error("Error loading animation:", error));
