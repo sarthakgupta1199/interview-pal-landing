@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { X } from "lucide-react";
 import confetti from "canvas-confetti";
-import catTyping from "@/assets/cat-typing.png";
-import catDancing from "@/assets/cat-dancing.png";
+import Lottie from "lottie-react";
 
 interface WaitlistModalProps {
   isOpen: boolean;
@@ -15,6 +14,15 @@ const WaitlistModal = ({ isOpen, onClose }: WaitlistModalProps) => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    // Load Lottie animation
+    fetch("/src/assets/cat-animation.lottie")
+      .then(response => response.json())
+      .then(data => setAnimationData(data))
+      .catch(error => console.error("Error loading animation:", error));
+  }, []);
 
   const triggerConfetti = () => {
     const duration = 1500;
@@ -91,11 +99,14 @@ const WaitlistModal = ({ isOpen, onClose }: WaitlistModalProps) => {
           {/* Cat animation */}
           <div className="flex justify-center mb-6">
             <div className="w-24 h-24 relative">
-              <img 
-                src={catTyping} 
-                alt="Cat typing" 
-                className="w-full h-full object-contain animate-pulse"
-              />
+              {animationData && (
+                <Lottie 
+                  animationData={animationData}
+                  loop={true}
+                  autoplay={true}
+                  className="w-full h-full"
+                />
+              )}
             </div>
           </div>
 
@@ -135,11 +146,14 @@ const WaitlistModal = ({ isOpen, onClose }: WaitlistModalProps) => {
                 {/* Dancing cat for success */}
                 <div className="flex justify-center mb-6">
                   <div className="w-24 h-24 relative">
-                    <img 
-                      src={catDancing} 
-                      alt="Cat dancing" 
-                      className="w-full h-full object-contain animate-bounce"
-                    />
+                    {animationData && (
+                      <Lottie 
+                        animationData={animationData}
+                        loop={true}
+                        autoplay={true}
+                        className="w-full h-full"
+                      />
+                    )}
                   </div>
                 </div>
                 <h2 className="text-2xl font-bold mb-3 font-manrope">
