@@ -35,7 +35,7 @@ const AceHero = () => {
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button size="lg" className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105" onClick={() => setIsWaitlistOpen(true)}>
-              Start practicing
+              Join waitlist
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4 group" onClick={() => navigate('/interview')}>
               <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />

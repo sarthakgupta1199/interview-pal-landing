@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { X } from "lucide-react";
 import confetti from "canvas-confetti";
-import typingCat from "@/assets/typing-cat.png";
+import catTyping from "@/assets/cat-typing.png";
+import catDancing from "@/assets/cat-dancing.png";
 
 interface WaitlistModalProps {
   isOpen: boolean;
@@ -89,11 +90,11 @@ const WaitlistModal = ({ isOpen, onClose }: WaitlistModalProps) => {
         <div className="text-center">
           {/* Cat animation */}
           <div className="flex justify-center mb-6">
-            <div className="w-20 h-20 relative">
+            <div className="w-24 h-24 relative">
               <img 
-                src={typingCat} 
-                alt="Typing cat" 
-                className="w-full h-full object-contain animate-bounce"
+                src={catTyping} 
+                alt="Cat typing" 
+                className="w-full h-full object-contain animate-pulse"
               />
             </div>
           </div>
@@ -131,6 +132,16 @@ const WaitlistModal = ({ isOpen, onClose }: WaitlistModalProps) => {
             <>
               {/* Post-submission state */}
               <div className="animate-fade-in">
+                {/* Dancing cat for success */}
+                <div className="flex justify-center mb-6">
+                  <div className="w-24 h-24 relative">
+                    <img 
+                      src={catDancing} 
+                      alt="Cat dancing" 
+                      className="w-full h-full object-contain animate-bounce"
+                    />
+                  </div>
+                </div>
                 <h2 className="text-2xl font-bold mb-3 font-manrope">
                   You're officially on the list 🎉
                 </h2>
