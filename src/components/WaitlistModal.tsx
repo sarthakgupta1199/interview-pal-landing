@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { X } from "lucide-react";
 import confetti from "canvas-confetti";
-import Lottie from "lottie-react";
 
 interface WaitlistModalProps {
   isOpen: boolean;
@@ -14,15 +13,6 @@ const WaitlistModal = ({ isOpen, onClose }: WaitlistModalProps) => {
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [animationData, setAnimationData] = useState(null);
-
-  useEffect(() => {
-    // Load Lottie animation from lottie.host
-    fetch("https://lottie.host/bffdc5c3-835d-43f0-aafd-4bd67c4aeb97/UL292uGmz6.json")
-      .then(response => response.json())
-      .then(data => setAnimationData(data))
-      .catch(error => console.error("Error loading animation:", error));
-  }, []);
 
   const triggerConfetti = () => {
     const duration = 1500;
@@ -96,22 +86,19 @@ const WaitlistModal = ({ isOpen, onClose }: WaitlistModalProps) => {
 
         {/* Content */}
         <div className="text-center">
-          {/* Cat animation */}
-          <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 relative">
-              {animationData && (
-                <Lottie 
-                  animationData={animationData}
-                  loop={true}
-                  autoplay={true}
-                  className="w-full h-full"
-                />
-              )}
-            </div>
-          </div>
-
           {!isSubmitted ? (
             <>
+              {/* Cat typing image */}
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20">
+                  <img 
+                    src="/lovable-uploads/4c46c838-0abb-4820-aab8-ab2a74eceff0.png"
+                    alt="Cat typing on laptop"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+              
               {/* Pre-submission state */}
               <h2 className="text-2xl font-bold mb-3 font-manrope">
                 Your future self will thank you
@@ -145,15 +132,12 @@ const WaitlistModal = ({ isOpen, onClose }: WaitlistModalProps) => {
               <div className="animate-fade-in">
                 {/* Dancing cat for success */}
                 <div className="flex justify-center mb-6">
-                  <div className="w-24 h-24 relative">
-                    {animationData && (
-                      <Lottie 
-                        animationData={animationData}
-                        loop={true}
-                        autoplay={true}
-                        className="w-full h-full"
-                      />
-                    )}
+                  <div className="w-20 h-20">
+                    <img 
+                      src="/lovable-uploads/cce40938-c235-4396-9c9e-344bd35f7315.png"
+                      alt="Cat celebrating with party hat"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
                 <h2 className="text-2xl font-bold mb-3 font-manrope">
