@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { Play } from "lucide-react";
+import { useState } from "react";
 import heroImage from "@/assets/hero-bg.jpg";
+import WaitlistModal from "./WaitlistModal";
 const AceHero = () => {
   const navigate = useNavigate();
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
@@ -31,7 +34,7 @@ const AceHero = () => {
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105" onClick={() => navigate('/interview')}>
+            <Button size="lg" className="text-lg px-8 py-4 shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 transform hover:scale-105" onClick={() => setIsWaitlistOpen(true)}>
               Start practicing
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4 group" onClick={() => navigate('/interview')}>
@@ -65,6 +68,12 @@ const AceHero = () => {
           </div>
         </div>
       </div>
+      
+      {/* Waitlist Modal */}
+      <WaitlistModal 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </section>;
 };
 export default AceHero;
